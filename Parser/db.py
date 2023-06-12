@@ -9,6 +9,8 @@ def loadToItradeDB(request, parts):
     ForumAuto.objects.filter(Request=request).delete()
     id = defineItradeID()
     for part in parts:
+        for i in range(len(part)):
+            part[i] = part[i][:200]
         ForumAuto(id, request, *part).save()
         id += 1
     rewriteItradeID(id)
