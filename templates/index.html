@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="ru">
+    <title>Car parts search</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <h1>Enter the part number</h1><br><br>
+    <form action="{% url 'results' %}" method="post">
+        {% csrf_token %}
+        <center>{{ form.partCode }}</center>
+    </form>
+    {% if error %}
+        <h3>Part with entered code not found!</h3>
+    {% endif %}
+
+</body>
+
+</html>

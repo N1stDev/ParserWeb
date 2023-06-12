@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="ru">
+    <title>Car parts search</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <div class="wrapper">
+      <a href="{% url 'index' %}"><span>Home</span></a>
+    </div>
+    <h2>{{ request }} search results</h2>
+    <br>
+    <h2>Forum-Auto</h2>
+    {% if not table1 %}
+        <h4>Nothing found!</h4>
+    {% else %}
+        <table class="table-fill">
+        <tr>
+            <th class="text-center">Vendor code</th>
+            <th class="text-center">Brand</th>
+            <th class="text-center">Product</th>
+            <th class="text-center">Applicability</th>
+            <th class="text-center">Returns</th>
+            <th class="text-center">Delivery</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Stock</th>
+        </tr>
+        {% for x in table1 %}
+            <tr>
+                <td class="text-center">{{ x.VendorCode }}</td>
+                <td class="text-center">{{ x.Brand }}</td>
+                <td class="text-center">{{ x.Product }}</td>
+                <td class="text-center">{{ x.Applicability }}</td>
+                <td class="text-center">{{ x.Returns }}</td>
+                <td class="text-center">{{ x.Delivery }}</td>
+                <td class="text-center">{{ x.Price }}</td>
+                <td class="text-center">{{ x.Stock }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+    <br>
+    <h2>Shate-M</h2>
+    {% if not table2 %}
+        <h4>Nothing found!</h4>
+    {% else %}
+        <table class="table-fill">
+        <tr>
+            <th class="text-center">Brand</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Stock</th>
+            <th class="text-center">Amount</th>
+            <th class="text-center">Rating</th>
+            <th class="text-center">Delivery</th>
+            <th class="text-center">Price</th>
+        </tr>
+        {% for x in table2 %}
+            <tr>
+                <td class="text-center">{{ x.Brand }}</td>
+                <td class="text-center">{{ x.Name }}</td>
+                <td class="text-center">{{ x.Stock }}</td>
+                <td class="text-center">{{ x.Amount }}</td>
+                <td class="text-center">{{ x.Rating }}</td>
+                <td class="text-center">{{ x.Delivery }}</td>
+                <td class="text-center">{{ x.Price }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+    <br>
+</body>
+
+</html>
