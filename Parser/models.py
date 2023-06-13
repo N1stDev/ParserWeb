@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class ForumAuto(models.Model):
+class ForumAuto(models.Model):  # Таблица с данными ForumAuto
     Request = models.CharField(max_length=100, default="None")
     VendorCode = models.CharField(max_length=100, default="None")
     Brand = models.CharField(max_length=100, default="None")
@@ -13,7 +13,7 @@ class ForumAuto(models.Model):
     Stock = models.CharField(max_length=100, default="None")
 
 
-class ShateM(models.Model):
+class ShateM(models.Model):  # Таблица с данными ShateM
     Request = models.CharField(max_length=100, default="None")
     Brand = models.CharField(max_length=100, default="None")
     Name = models.CharField(max_length=100, default="None")
