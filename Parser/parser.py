@@ -12,11 +12,11 @@ class Parser:
         self.shateIDsParts = "https://shate-m.ru/api/searchPart/GetOriginalsInternalPrices?agreement="
         self.shateSearchIDs = "https://shate-m.ru/api/SearchPart/PartsByNumber?number="
 
-        self.itradeLogin = "forddetal@yandex.ru"
-        self.shateLogin = "CHUPRINIA"
+        self.itradeLogin = ""
+        self.shateLogin = ""
 
-        self.itradePassword = "3b02f43b98e8c52f"
-        self.shatePassword = "123456789"
+        self.itradePassword = ""
+        self.shatePassword = ""
 
         self.partCode = partCode
 
